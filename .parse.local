@@ -1,10 +1,13 @@
 {
   "applications": {
     "_default": {
-      "link": "pp90x"
+      "link": "pp90x_test"
     },
     "pp90x": {
       "applicationId": "pIfi1ihFgOcKOSt88cDGD6R6elWS0kxbZHLtbCYW"
+    },
+    "pp90x_test": {
+      "applicationId": "B7mErGQwGv2anlGKqzwrGEzfO3zDFOajxZm8e6cH"
     }
   }
 }
