@@ -36,7 +36,7 @@ Parse.Cloud.beforeSave("PPMatch", function(request, response) {
 /**
 * Send a push notification to the next player to act.
 */
-Parse.Cloud.afterSave("PPMatch", function(request, response) {
+Parse.Cloud.afterSave("PPMatch", function(request) {
 	
 	var match = request.object;
 	var player = nextPlayerToActForMatch(match);
@@ -51,12 +51,13 @@ Parse.Cloud.afterSave("PPMatch", function(request, response) {
 	},
 	{
   		success: function() {
-    		response.success();
+    		console.log("Push notification(s) delivered to " + player.id + " for match " + match.id + ".");
   		},
   		error: function(error) {
-    		response.reject(error);
+  			console.error(error);
   		}
 	});
+	
 });
 
 /**
