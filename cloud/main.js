@@ -14,14 +14,14 @@ const PPMatchTypeRandom = "random";
 Parse.Cloud.beforeSave("PPMatch", function(request, response) {
 	
 	var match = request.object;
-	var matchType = request.get("matchType");	
+	var matchType = match.get("matchType");	
 	var state = match.get("state");
 	
 	if (state === PPMatchStatePending) {
 		if (matchType === PPMatchTypeRandom) {
 			
-			randomPartnerForMatch(request.object).then(function(player2) {
-				request.object.set("player2", player2);
+			randomPartnerForMatch(match).then(function(player2) {
+				match.set("player2", player2);
 				response.success();
 			},
 			function(error) {
