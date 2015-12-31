@@ -30,6 +30,9 @@ Parse.Cloud.beforeSave("PPMatch", function(request, response) {
 			
 		}
 	} 
+	else {
+		response.success();
+	}
 	
 });
 
