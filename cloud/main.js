@@ -131,7 +131,7 @@ function randomPartnerForMatch(match) {
 		else {
 			var index = Math.floor(Math.random() * results.length)
 			var player2 = results[index]
-			return Parse.promise.as(player2);	
+			return Parse.Promise.as(player2);	
 		}	
 	},
 	function(error) {
