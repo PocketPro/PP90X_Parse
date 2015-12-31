@@ -88,7 +88,7 @@ function nextPlayerToActForMatch(match) {
 			nextToAct = (p1LastScore <= p2LastScore) ? player1 : player2;
 		}
 		else {
-			nextToAct = (player1Scores.length < player2Scores.length) ? player1 : player 2;
+			nextToAct = (player1Scores.length < player2Scores.length) ? player1 : player2;
 		}
 	}
 	
